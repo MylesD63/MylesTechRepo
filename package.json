@@ -1,0 +1,24 @@
+{
+  "name": "mylestestrepo",
+  "version": "1.0.0",
+  "description": "Playwright automation tests for SauceDemo",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:report": "playwright show-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MylesD63/MylesTestRepo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MylesD63/MylesTestRepo/issues"
+  },
+  "homepage": "https://github.com/MylesD63/MylesTestRepo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
