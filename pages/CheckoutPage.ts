@@ -1,14 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
-/**
- * Page Object for the SauceDemo checkout flow
- * (checkout-step-one, checkout-step-two, checkout-complete).
- *
- * Follows the Yoga Home POM pattern: all locators are readonly class
- * properties initialised in the constructor, with individual action
- * methods, assertions, and a high-level orchestration method.
- */
+
 export class CheckoutPage {
   readonly page: Page;
   readonly firstNameInput: Locator;
@@ -76,11 +69,7 @@ export class CheckoutPage {
     await expect(this.confirmationHeading).toBeVisible();
   }
 
-  /**
-   * High-level orchestration: fill shipping info, verify overview
-   * prices, and finish the checkout. Mirrors the Yoga Home pattern
-   * of complete* methods that drive an entire page flow.
-   */
+  
   async completeCheckout(
     shippingInfo: { firstName: string; lastName: string; postalCode: string },
     expectedTotals?: { subtotal: string; tax: string; total: string },

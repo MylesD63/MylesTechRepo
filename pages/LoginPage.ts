@@ -1,13 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
-/**
- * Page Object for the SauceDemo login page (/).
- *
- * Follows the Yoga Home POM pattern: all locators are readonly class
- * properties initialised in the constructor, with individual action
- * methods and a high-level orchestration method (loginAndVerify).
- */
+
 export class LoginPage {
   readonly page: Page;
   readonly usernameInput: Locator;
@@ -60,11 +54,7 @@ export class LoginPage {
     await this.clickLogin();
   }
 
-  /**
-   * High-level orchestration: navigate, login, dismiss any popup, and verify success.
-   * Mirrors the Yoga Home pattern of complete* methods that drive
-   * an entire page flow from test data.
-   */
+
   async loginAndVerify(username: string, password: string) {
     await this.goto();
     // Auto-accept any browser-native dialog (alert/confirm) that may appear

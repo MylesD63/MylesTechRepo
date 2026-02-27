@@ -1,13 +1,7 @@
 import type { Locator, Page } from '@playwright/test';
 import { expect } from '@playwright/test';
 
-/**
- * Page Object for the SauceDemo cart page (/cart.html).
- *
- * Follows the Yoga Home POM pattern: all locators are readonly class
- * properties initialised in the constructor, with individual action
- * methods and assertions.
- */
+
 export class CartPage {
   readonly page: Page;
   readonly cartItems: Locator;
@@ -32,6 +26,14 @@ export class CartPage {
   /** Click Continue Shopping to return to the inventory page. */
   async continueShopping() {
     await this.continueShoppingButton.click();
+  }
+
+  /** Click the Remove button for a specific item in the cart. */
+  async removeItem(itemName: string) {
+    await this.cartItems
+      .filter({ hasText: itemName })
+      .getByRole('button', { name: 'Remove' })
+      .click();
   }
 
   /** Return the names and prices of all items currently in the cart. */

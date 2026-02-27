@@ -10,13 +10,7 @@ export interface Product {
   price: string;
 }
 
-/**
- * Page Object for the SauceDemo inventory / products page (/inventory.html).
- *
- * Follows the Yoga Home POM pattern: all locators are readonly class
- * properties initialised in the constructor, with individual action
- * methods and high-level helpers.
- */
+
 export class InventoryPage {
   readonly page: Page;
   readonly productsHeading: Locator;
@@ -43,6 +37,14 @@ export class InventoryPage {
     await this.productItems
       .filter({ hasText: itemName })
       .getByRole('button', { name: 'Add to cart' })
+      .click();
+  }
+
+  /** Click the "Remove" button for a product identified by its display name. */
+  async removeItemFromCart(itemName: string) {
+    await this.productItems
+      .filter({ hasText: itemName })
+      .getByRole('button', { name: 'Remove' })
       .click();
   }
 
