@@ -99,7 +99,7 @@ Tests run against three browsers (configured in `playwright.config.ts`):
 
 4. Run tests in headed mode (visible browser):
 
-	```npx 
-	playwright test --ui
-	```
+    ```bash
+    npx playwright test --headed
+    ```
 
