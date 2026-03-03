@@ -1,5 +1,6 @@
 import 'dotenv/config';
 import { defineConfig, devices } from '@playwright/test';
+import testData from './test-data.json';
 
 export default defineConfig({
   testDir: './tests',
@@ -9,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: [['html', { open: 'never' }], ['list']],
   use: {
-    baseURL: 'https://www.saucedemo.com',
+    baseURL: testData.baseURL,
     screenshot: 'only-on-failure',
     video: 'retain-on-failure'
   },
