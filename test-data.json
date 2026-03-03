@@ -1,5 +1,6 @@
 {
   "baseURL": "https://www.saucedemo.com",
+
   "users": {
     "standard": {
       "username": "standard_user",
@@ -26,20 +27,24 @@
       "password": "secret_sauce"
     }
   },
+
   "invalidCredentials": {
     "username": "invalid_user",
     "password": "wrong_password"
   },
+
   "emptyCredentials": {
     "username": "",
     "password": ""
   },
+
   "errorMessages": {
     "emptyUsername": "Epic sadface: Username is required",
     "emptyPassword": "Epic sadface: Password is required",
     "invalidCredentials": "Epic sadface: Username and password do not match any user in this service",
     "lockedOut": "Epic sadface: Sorry, this user has been locked out."
   },
+
   "products": [
     {
       "id": "sauce-labs-backpack",
@@ -72,6 +77,7 @@
       "price": 15.99
     }
   ],
+
   "checkout": {
     "customer": {
       "firstName": "Test",
@@ -80,6 +86,7 @@
     },
     "taxRate": 0.08
   },
+
   "sortOptions": {
     "nameAZ": "az",
     "nameZA": "za",
